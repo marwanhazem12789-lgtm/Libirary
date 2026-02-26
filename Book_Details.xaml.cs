@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Library_Management_System
+{
+    /// <summary>
+    /// Interaction logic for Book_Details.xaml
+    /// </summary>
+    public partial class Book_Details : Page
+    {
+        Book b;
+        public Book_Details()
+        {
+            InitializeComponent();
+
+        }
+        public Book_Details(Book book)
+        {
+            InitializeComponent();
+            b = book;
+            this.DataContext = b;
+
+        }
+
+        private void btnBorrow_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Book_Borrow());
+        }
+    }
+
+}
